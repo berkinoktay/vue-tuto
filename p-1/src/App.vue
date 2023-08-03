@@ -5,20 +5,19 @@ import router from './router'
 console.log(router.getRoutes())
 const routes: any = [
   { name: 'home', path: '/' },
-  { name: 'posts', path: '/posts' },
-  { name: 'todos', path: '/todos' }
+  { name: 'counter', path: '/counter' },
+  { name: 'stopwatch', path: '/stopwatch' }
 ]
-const testEmit = () => 
-{
-  console.log('testEmit')
-  console.log(performance.now(), ' - clickButton outside')
-}
 </script>
 
 <template>
   <nav>
     <Button />
-    <Button variant="secondary" size="sm" @clickTest="(e, id) => console.log('VUERULAZZZZ', e,id)" />
+    <Button
+      variant="secondary"
+      size="sm"
+      @clickTest="(e, id) => console.log('VUERULAZZZZ', e, id)"
+    />
     <Button variant="danger" size="lg" />
     <Button variant="danger" size="lg" disabled />
 
