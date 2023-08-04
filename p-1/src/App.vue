@@ -7,9 +7,10 @@ import logo from './assets/logo.svg'
 
 const routes: any = [
   { name: 'home', path: '/' },
-  { name: 'posts', path: '/posts' },
-  { name: 'todos', path: '/todos' }
+  { name: 'counter', path: '/counter' },
+  { name: 'stopwatch', path: '/stopwatch' }
 ]
+
 const testEmit = () => 
 {
   console.log('testEmit')
@@ -22,7 +23,11 @@ const logoRef = ref<string>(logo);
 <template>
   <nav>
     <Button />
-    <Button variant="secondary" size="sm" @clickTest="(e, id) => console.log('VUERULAZZZZ', e,id)" />
+    <Button
+      variant="secondary"
+      size="sm"
+      @clickTest="(e, id) => console.log('VUERULAZZZZ', e, id)"
+    />
     <Button variant="danger" size="lg" />
     <Button variant="danger" size="lg" disabled :leftIcon="logoRef" :rightIcon="logoRef" />
 

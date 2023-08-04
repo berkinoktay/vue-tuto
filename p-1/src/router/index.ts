@@ -10,26 +10,26 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/posts',
-      name: 'posts',
-      component: () => import('../views/Posts/PostsView.vue'),
+      path: '/counter',
+      name: 'counter',
+      component: () => import('../views/Counter/Counter.vue'),
       children: [
         {
           path: ':id',
           name: 'post-detal',
-          component: () => import('../views/Posts/PostDetailView.vue')
+          component: () => import('../views/Counter/PostDetailView.vue')
         }
       ]
     },
     {
-      path: '/todos',
-      name: 'todos',
-      component: () => import('../views/Todos/TodosView.vue'),
+      path: '/stopwatch',
+      name: 'stopwatch',
+      component: () => import('../views/Stopwatch/Stopwatch.vue'),
       children: [
         {
           path: ':id',
           name: 'post-detal',
-          component: () => import('../views/Todos/TodoDetailView.vue')
+          component: () => import('../views/Stopwatch/TodoDetailView.vue')
         }
       ]
     },
