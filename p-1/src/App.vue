@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { RouterView, RouterLink } from 'vue-router'
+import { ref } from 'vue'
 import Button from './components/Button/Button.vue'
-import router from './router'
-console.log(router.getRoutes())
+
+import logo from './assets/logo.svg'
+
 const routes: any = [
   { name: 'home', path: '/' },
   { name: 'posts', path: '/posts' },
@@ -13,6 +15,8 @@ const testEmit = () =>
   console.log('testEmit')
   console.log(performance.now(), ' - clickButton outside')
 }
+const logoRef = ref<string>(logo);
+
 </script>
 
 <template>
@@ -20,7 +24,7 @@ const testEmit = () =>
     <Button />
     <Button variant="secondary" size="sm" @clickTest="(e, id) => console.log('VUERULAZZZZ', e,id)" />
     <Button variant="danger" size="lg" />
-    <Button variant="danger" size="lg" disabled />
+    <Button variant="danger" size="lg" disabled :leftIcon="logoRef" :rightIcon="logoRef" />
 
     <ul class="w-full flex">
       <li
